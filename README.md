@@ -2,4 +2,4 @@
 
 ## Live Preview
 
-[Live preview on tumblr](http://visual-ideas-theme.tumblr.com/)
+[Tumblr](http://visual-ideas-theme.tumblr.com/)
