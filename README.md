@@ -10,7 +10,6 @@ A masonry based theme for image heavy aesthetic tumblr blogging. The amount of c
 
 - Permalink, Reblog and Like buttons visible
 
-- 
 
 ## Live Preview
 
