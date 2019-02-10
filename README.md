@@ -2,7 +2,7 @@
 
 A masonry based theme for image heavy aesthetic tumblr blogging. The amount of columns will depend on your monitor resolution, min is 1 and max is 3.
 
-- Responsive, minimal design
+- Fully responsive, minimal design
 
 - Column layout using [Masonry jQuery plugin](https://masonry.desandro.com/)
 
