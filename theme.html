@@ -1,0 +1,366 @@
+<!--Theme ver0.3-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{Title}</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="tumblr, theme, css, html, responsive">
+    <meta name="author" content="Maria Permala">
+    <!-- Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+<!-- Masonry -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+<script>
+$(function(){
+
+var $grid = $('#container').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  gutter: 10,
+  percentPosition: true
+});
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+
+$(window).resize(function () {
+    $('#container').masonry('reloadItems');
+});
+});
+</script>
+
+
+<!--Switches-->
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Text" content="#9B9B9B"/>
+<meta name="color:Link" content="#b8b8b8"/>
+<meta name="color:LinkHover" content="#b8b8b8"/>
+<meta name="color:Sidebar" content="#ffffff"/>
+<meta name="color:SidebarLink" content="#b8b8b8"/>
+<meta name="color:Post" content="#b8b8b8"/>
+<meta name="color:CaptionBorder" content="#b8b8b8"/>
+<meta name="color:Pagination" content="#ffffff"/>
+<meta name="text:Link 1" content="/"/>
+<meta name="text:Link 1 Title" content="one"/>
+<meta name="text:Link 2" content="/" />
+<meta name="text:Link 2 Title" content="two"/>
+<meta name="text:Link 3" content="/" />
+<meta name="text:Link 3 Title" content="three"/>
+<meta name="text:Link 4" content="/" />
+<meta name="text:Link 4 Title" content="four"/>
+
+
+<style>
+    
+/*General*/
+body{background:{color:background};font-family:sans-serif}
+
+/*To remove that tumblr follow me
+.tmblr-iframe–controls.iframe-controls–desktop, .tmblr-iframe–mobile-loggedin-controls.iframe-controls–desktop {
+  display: none;
+}
+
+/*Header*/
+header {background:{color:Sidebar};max-width:100%;margin-top:-10px;top:0;height:150px;}
+{block:Permalink}header{display:none}{/block:Permalink}
+
+/*Sidebar*/
+.sidebar{background:{color:Sidebar};height:100%;position:fixed;top:0;left:0;float:left;width:290px;text-align:center;}
+.sidebar p{padding:40px;font-size:12px;font-family: 'Overpass Mono', monospace}
+.sidebar .avatar{padding: 20px;border-radius:100%;}
+.nav{padding:0 80px;}
+.nav li{list-style:none}
+.nav li a{display:block;text-decoration:none;color:{color:SidebarLink};font-size:16px;font-family:'Overpass Mono', monospace}
+.nav li a:hover{color:{color:Pagination}}
+.title a{color:{color:Pagination}}
+
+/*Posts*/
+.entry{background:{color:Post};max-width:100%;float:left;}
+.caption p, .caption{font-size: 13px;margin-top:5px;color:{color:text}}
+.caption a{{color:link};padding:0;}
+.caption pre {white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */}
+.entry video{max-width:100%}
+.entry h1 a, .entry h2 a, .entry h3 a,{padding:10px;text-decoration:none;color:{color:text};}
+.entry a:hover{color:{color:LinkHover}}
+.entry p img,.entry blockquote img{max-width:100%}
+.entry .photo{width:100%;height:auto}
+.entry hr{width:50px;color:#eee;box-shadow:none;}
+
+/*Text*/
+.txt{padding:10px}
+.txt h3 a{text-decoration:none;color:{color:text}}
+.txt blockquote {font-size: 12px}
+
+/*Chat*/
+.chat{padding:10px;font-size:12px;}
+
+/*Quote*/
+.quote{padding:10px;font-size:20px;}
+.quote .quote-src{font-size:12px}
+
+/*Link*/
+.link{margin:40px}
+.link a:hover{background:skyblue}
+.link a{padding:20px;display:block;text-align:center;background:yellow;text-decoration:none;color:#222;font-size:40px;font-weight:600;}
+.link_exc{display:block;color:#777;border-left:2px solid #777;padding:10px;margin-top:10px;font-size:14px}
+
+/*Video */
+.media{position:relative;padding-bottom:75%;height:0;overflow:hidden}
+.media iframe,.media object,.media embed{position:absolute;top:0;left:0;width:100%;height:100%}
+
+/*Post links*/ 
+.like-reblog{list-style:none;margin:0}
+.like-reblog li, .like-reblog a{float:right;padding:0 3px}
+.info i{float:right;padding:0 3px;font-size:13px;color:#ccc}
+
+/* Pages --not in use*/
+.page{background:#222;padding:20px}
+.page a{text-decoration:none;color:#eee}
+.pagelist{margin:0 auto;width:640px}
+
+/*Pagination*/
+.pagenav{position:fixed;left:140px;top:230px;z-index:9999;width:40px}
+.next, .previous {display:block;padding:0}
+.next a, .previous a{text-decoration:none;font-weight:bold;color:{color:Pagination};font-size:20px}
+
+/*Caption nesting*/
+.author{display:block;margin-bottom:20px}
+.author a,.tumblr_parent a{text-decoration:none;font-size:12px;color:{color:link};padding-left:0}
+.tumblr_parent{padding:0 10px;margin:0;border-bottom: 1px solid {color:CaptionBorder}}
+.tumblr_parent:last-child{border-bottom:none}
+.tumblr_avatar{margin-right:5px;height:16px;padding-top:10px}
+
+/*Permalink*/
+.perma a,.perma {text-decoration:none;font-size:10px;color:#666}
+.rb{font-size:10px;border-bottom:1px solid #ddd;padding: 0 0 10px 10px}
+
+/*Stuff for Grid*/
+#container{max-width:100%;margin-left:300px}
+.grid-sizer,
+.grid-item, .entry{width:32%;max-width:100%;margin-bottom: 10px;}
+{block:Permalink}.grid-sizer,
+.grid-item, .entry{width:50%;}{/block:Permalink}
+
+@media only screen and (max-width:1024px){
+/*Sidebar*/
+.sidebar{width:250px}
+.nav li a{
+    font-size:14px;  
+    -webkit-transition: font-size .5s ease;
+    -moz-transition: font-size .5s ease;
+    -o-transition: font-size .5s ease;
+    transition: font-size .5s ease;}
+/*Stuff for Grid*/
+#container{
+    margin-left:250px;
+    -webkit-transition: margin-left .5s ease;
+    -moz-transition: margin-left .5s ease;
+    -o-transition: margin-left .5s ease;
+    transition: margin-left .5s ease;
+}
+.grid-item, .grid-sizer {width:45%;}
+header{display:none;}
+.pagenav{left:120px}
+}
+
+
+@media only screen and (max-width:768px){
+.sidebar{width:100%;position:fixed;height:70px;float:none;top:0;right:0;left:0;z-index: 9999}
+.sidebar .avatar {display:none}
+.nav{margin-top:5px}
+.nav li{list-style:none;display:inline-block}
+.nav li a{font-size:14px;padding:5px;}
+#container{margin-top:100px;margin-left:0;}
+.grid-sizer,
+.grid-item{width:100%;}
+.pagenav{position:fixed;padding:10px;top:10px;left:10px;z-index:9999;width:60px;}
+}
+
+
+</style>
+</head>
+
+<body>
+<!--
+<header> </header> 
+-->
+
+    <div class="sidebar">
+        <img class="avatar" src="{PortraitURL-64}">
+        <div class="title"><h1><a href="{BlogURL}">{Title}</a></h1></div>    
+        {block:Description}<h2>{Description}</h2> {/block:Description}
+        
+    <ul class="nav">
+        <li><a href="{BlogURL}">home</a></li>
+        <li><a href="{text:Link 1}">{text:Link 1 Title}</a></li>
+        {/block:ifLink1}{block:ifLink2}
+        <li><a href="{text:Link 2}">{text:Link 2 Title}</a></li>
+        {/block:ifLink2}{block:ifLink3}
+        <li><a href="{text:Link 3}">{text:Link 3 Title}</a></li>
+        {/block:ifLink3}{block:ifLink4}
+        <li><a href="{text:Link 4}">{text:Link 4 Title}</a></li>
+        </ul>
+    </div>
+    
+
+<div id="container"><!-- For grid-->
+
+    {block:Posts}
+    <!-- .grid-sizer empty element, only used for element sizing -->
+  <div class="grid-sizer"></div>
+    <div class="entry grid-item">
+    
+        {block:Text}
+        <div class="txt">
+        {block:Title}
+        <h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+        <div class="caption">{Body}</div>
+        </div>
+        {/block:Text} 
+    
+    {block:Photo}
+        <img class="photo" src="{PhotoURL-HighRes}"> {block:Caption}
+        <div class="caption">{Caption}</div>{/block:Caption} 
+        {/block:Photo} 
+    
+    {block:Photoset}
+        <div class="set">{Photoset}</div>{block:Caption}
+        <div class="caption">{Caption}</div>{/block:Caption} 
+        {/block:Photoset} 
+    
+    {block:Quote}
+    <div class="quote">
+    {Quote}{block:Source}
+        <div class="quote-src"><br>&mdash;{Source}</div>{/block:Source} 
+        </div>
+     {/block:Quote} 
+    
+    {block:Link}
+    <div class="link">
+        <a href="{URL}" {Target}>{Name}</a>{block:Excerpt}<div class="link_exc">{Excerpt}</div>{/block:Excerpt} {block:Description}<div class="link_desc">{Description}</div>{/block:Description}
+        </div>
+       {/block:Link} 
+    
+    {block:Chat}
+    <div class="chat">
+    {block:Title}{Title}{/block:Title}
+        <table>
+            {block:Lines}
+            <tr><th>{block:Label}{Label}{/block:Label}</th><td>{Line}</td></tr>
+            {/block:Lines}
+        </table>
+        </div>
+    {/block:Chat} 
+    
+    {block:Audio}
+    {AudioPlayer} {block:Caption}
+        <div class="caption">{Caption}</div>{/block:Caption} 
+    {/block:Audio} 
+    
+    {block:Video}
+        <div class="media">{Video-500}</div> {block:Caption}
+        <div class="caption">{Caption}</div>{/block:Caption} 
+    {/block:Video}
+    
+        <ul class="like-reblog">
+        <li>{LikeButton size="14" color="grey"}</li>
+        <li>{ReblogButton size="14" color="grey"}</li>
+        </ul>
+        
+        <div class="info">&nbsp;<a href="{Permalink}"><i title="permalink" class="fas fa-anchor"></i></a></div>
+
+        {block:PermalinkPage}
+        <div class="rb">
+        {block:Date}{ShortMonth} {DayOfMonth}{/block:Date}{block:NoteCount} ( {NoteCount} notes ) {/block:NoteCount}
+            {block:RebloggedFrom}
+            <b> via</b> <a href="{ReblogParentURL}">{ReblogParentName}</a> {block:ContentSource} <b>, source </b>
+<a href="{ReblogRootURL}">{ReblogRootName}</a>{/block:ContentSource}{/block:RebloggedFrom}
+    {block:HasTags} 
+    {block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags} {/block:HasTags}</div>
+        
+        {block:PostNotes}<div class="perma">{PostNotes}</div>{/block:PostNotes} {/block:PermalinkPage}
+
+    </div>
+    {/block:Posts}
+    </div><!--grid ends here-->
+    
+            {block:Pagination}
+    <div class="pagenav">
+        {block:PreviousPage}
+        <div class="previous"><a href="{PreviousPage}"><i class="fas fa-angle-left"></i></a></div>
+        {/block:PreviousPage}
+        <div class="next">
+            {block:NextPage}
+            <a href="{NextPage}"><i class="fas fa-angle-right "></i></a></div>
+        {/block:NextPage}
+    </div>
+    {/block:Pagination}
+    
+    <!-- {block:NoRebloggedFrom}
+    {block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}
+    {/block:NoRebloggedFrom} -->
+    {block:ContentSource}<!-- {SourceURL}
+    {block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height    ="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+    {block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+    {/block:ContentSource}
+    
+
+    
+<script src="https://static.tumblr.com/wgg6svp/I8Yobwo15/unnest.min.js"></script>
+    <script>
+    /* Caption unnesting by https://neothm.com/post/149023525244 */
+        $(function() {
+            $('.entry').unnest({
+                yourCaption: ".caption",
+                wrapName: ".tumblr_parent",
+                newCaptionUsername: false,
+                originalPostCaptionUsername: false,
+                tumblrAvatars: true,
+                tumblrAvatarClass: ".tumblr_avatar",
+                usernameColon: false
+            });
+        });
+     </script>
+     
+     
+     <!-- Masonry -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+<script>
+$(function(){
+
+var $grid = $('#container').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  gutter: 10,
+  percentPosition: true
+});
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+
+$(window).resize(function () {
+    $('#container').masonry('reloadItems');
+});
+});
+</script>
+
+
+</body>
+
+</html>
