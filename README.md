@@ -1,4 +1,4 @@
-# Read Me
+# Masonry Blog Theme
 
 A masonry based theme for image heavy aesthetic tumblr blogging. The amount of columns will depend on your monitor resolution, min is 1 and max is 3.
 
